@@ -237,7 +237,7 @@ class ChannelOption(BaseSlashCommandOption):
     def __init__(self, *, name: str, description: Optional[str] = None, required: bool = True, channel_types: Optional[List[ChannelOptionChannelTypes]] = None):
         super().__init__(name=name, description=description, required=required)
         self.type = 7
-        self.channel_types: list[ChannelOptionChannelTypes] = channel_types if channel_types else []
+        self.channel_types: list[ChannelOptionChannelTypes] = channel_types or []
         
     def to_dict(self):
         usual_dict: dict = super().to_dict()
